@@ -1,0 +1,90 @@
+SELECT * 
+FROM posts
+ORDER BY date_post DESC
+LIMIT 3
+;
+
+Mi resumen de todo esto es el siguiente:
+
+Las consultas anidadas son la mejor opción cuando los valores dependen de otras tablas, y estas no se encuentran relacionadas entre si.
+
+Las consultas anidadas son la mejor opción para casos de INSERT, DELETE, UPDATE, cuya condición dependa del esenario explicado en el punto anterior
+
+Los JOINS son la mejor opción para casos de SELECT
+-------------------------------
+QUERY ANIDADO
+SELECT title, date_publi, status
+FROM posts
+WHERE date_publi = (
+SELECT MAX(date_publi)
+ FROM posts
+);
+--------------------------
+SELECT new_table_projection.date,COUNT(*) AS posts_count
+FROM(
+ SELECT DATE(MIN(date_post)) AS date, YEAR(date_post) AS post_year
+ FROM posts
+ GROUP BY post_year
+ ) AS new_table_projection
+GROUP BY new_table_projection.date
+ORDER BY new_table_projection.date
+ ;
+
+
+----------------
+SELECT MONTHNAME(date_post) AS post_month,status, COUNT(*) AS post_quantity
+FROM posts
+GROUP BY status,post_month
+HAVING post_quantity > 1
+ORDER BY post_month
+;
+---------------------
+SELECT * 
+FROM label
+	LEFT JOIN post_labels ON label.id = post_labels.label_id
+WHERE post_labels.label_id IS NULL;
+
+-------------------
+SELECT c.name_category, COUNT(*) as number_posts
+FROM category AS c
+	INNER JOIN posts AS p ON c.id = p.category
+    GROUP BY c.id
+    ORDER BY number_posts DESC
+    LIMIT 2;
+
+----------------------------
+SELECT u.nickname, COUNT(*) number_posts, GROUP_CONCAT(name_category)
+FROM users AS u
+	INNER JOIN posts AS p ON u.id = p.user_id
+	INNER JOIN category AS c ON c.id = p.category
+GROUP BY u.id
+ORDER BY number_posts DESC
+    ;
+
+--------------------------
+SELECT *
+FROM users AS u
+	LEFT JOIN posts ON u.id = posts.user_id
+    WHERE posts.user_id IS NULL
+    ;
+    
+
+-----------------------------
+Resumen
+Emplear colecciones de nivel cero para entidades fuertes, que mas adelante se empleen para realizar busquedas exhaustivas.
+Emplear subcolecciones para entidades débiles, que solo permitan plasmar información relacionada, pero que dicha data no sea una fuente de consulta primaria para nuestra aplicación.
+
+--------------------------------
+En definitiva, una solución BI completa permite:
+
+Observar ¿qué está ocurriendo?
+
+Comprender ¿por qué ocurre?
+
+Predecir ¿qué ocurriría?
+
+Colaborar ¿qué debería hacer el equipo?
+
+Decidir ¿qué camino se debe seguir?
+------------------------------------
+Business intelligence: Tener todos los datos (actuales e históricos) de manera clara y oportuna, para que sean útiles para el momento de tomar decisiones de negocios basados en esos datos.

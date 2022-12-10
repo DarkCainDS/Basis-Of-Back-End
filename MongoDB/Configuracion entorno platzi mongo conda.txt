@@ -1,0 +1,14 @@
+En mi caso estoy utilizando Windows 10
+Una vez que hayan instalado anaconda.
+
+Abrimos la terminal de anaconda, la buscamos con el nombre de “Anaconda Prompt”
+Clonamos el repositorio: git clone https://github.com/AERC18/platzi-mongo.git
+Ingresamos a la carpeta: cd platzi-mongo
+Crear un nuevo ambiente: conda create --name platzi-mongo
+Activar el ambiente: conda activate platzi-mongo
+Instalar dependencias: conda install --file requirements.txt
+Ingresar las variables necesarias para ejecutar el proyecto:
+set FLASK_APP=platzi-api
+set FLASK_ENV=development
+set PLATZI_DB_URI=“mongodb+srv://platzi-admin:password@curso-platzi-m0b9c.mongodb.net”
+Corremos el servidor: flask run

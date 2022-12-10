@@ -1,0 +1,7 @@
+SELECT  idioma, precio, 
+CASE
+	WHEN precio > 1000 THEN "Muy caro"
+	WHEN precio > 500 THEN "Precio módico"
+	ELSE "Muy barato"
+END AS "informe"
+FROM libros;

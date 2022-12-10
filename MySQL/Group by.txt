@@ -1,0 +1,13 @@
+SELECT MONTHNAME(date_post) AS post_month, COUNT(*) AS post_quantity
+FROM posts
+GROUP BY post_month;
+-------------
+SELECT YEAR(date_post) AS post_year, COUNT(*) AS post_quantity
+FROM posts
+GROUP BY post_year;
+-------------
+SELECT * 
+FROM posts
+ORDER BY date_post DESC
+LIMIT 3
+;

@@ -1,0 +1,86 @@
+Configuración e instalación de dependencias para el proyecto PlatziMongo
+
+¡Hola! Ahora vamos a aplicar todo lo aprendido durante el curso en la creación de un proyecto que usará MongoDB. ¡No te preocupes! Este módulo es completamente opcional, si quieres puedes saltarte al siguiente módulo. El examen no incluye preguntas sobre este módulo 😉.
+
+🐍 ¡Crearemos una pequeña API desarrollada con Python la cual simulará ser un mini Platzi! Esta es una aplicación backend que se comunicará con nuestra base de datos mediante el driver Pymongo. En esta clase aprenderás a cómo instalar y configurar todas las herramientas que necesitarás para trabajar el proyecto de PlatziMongo. En resumen, esto es lo que haremos:
+
+Descargaremos el código base de nuestro proyecto desde GitHub.
+Instalaremos Postman para facilitarnos interactuar con nuestra API.
+Crearemos un entorno virtual con Python.
+Instalaremos las dependencias de nuestro proyecto.
+¡Estableceremos las configuraciones finales para que nuestro proyecto empiece a funcionar!
+¡Así que vamos a ello!
+
+Clonando el repositorio del proyecto
+Lo primero que necesitamos hacer es clonar el repositorio del proyecto, esto lo puedes hacer con el siguiente comando en la carpeta de tu preferencia:
+
+git clone https://github.com/AERC18/platzi-mongo
+Este repositorio incluye el código base de nuestro proyecto, en las próximas clases nos encargaremos de completarlo añadiendo las consultas necesarias a nuestra base de datos.
+
+Adicionalmente, puedes ver el código de cada clase en las diferentes ramas que incluye este proyecto. Puedes ver las ramas ejecutando el siguiente comando dentro de la carpeta del mismo:
+
+git branch
+Instalación de Postman
+Ya que tenemos el código base de nuestra mini API descargado, ahora necesitamos una manera de comunicarnos con ella. Recuerda que este código que descargamos es de una aplicación backend que se comunicará con nuestra base de datos en Mongo, y como toda aplicación backend, esta necesita recibir solicitudes HTTP para realizar las acciones necesarias.
+
+Podríamos hacer una aplicación frontend que se encargue de mandar estas solicitudes, o podríamos apoyarnos de herramientas como Postman que se encargan de mandar estas solicitudes hacia cualquier backend, así nos ahorramos el tener que programar una aplicación frontend 😉.
+
+A continuación te explico los pasos para que descargues Postman:
+
+Ve a su página oficial en https://www.getpostman.com/downloads/ y dale click al botón de “Download App”
+Postman
+Ejecuta el instalador, Postman se instalará y configurará automáticamente, tú solo espera.
+Postman Installing
+¡Ya tienes instalado Postman! Te recomiendo crear una cuenta para usar Postman. Puedes registrarte por medio de las opciones que te da Postman cuando se abre, o puedes clicar en la opción “Skip an go to the app” para saltarte este paso:
+Register Postman.png
+Hasta este punto ya deberías tener el programa instalado en tu computadora. En Postman podemos crear algunas solicitudes HTTP de ejemplo y compartirlas con otras personas para que ellos solo tengan que ejecutarlas. Yo he creado algunas solicitudes de ejemplo para nuestro proyecto, a continuación te las comparto y te explico cómo importarlas en tu cliente de Postman:
+
+Primero debemos seleccionar un Workspace dentro de Postman, para ello abrimos la pestaña “Workspace” y seleccionamos “My Workspace”.
+Workspace tab.png
+En el panel de la derecha hacemos click en el botón que dice “Import” y en la ventana emergente que nos aparece seleccionamos la pestaña “Link”, ahí pegaremos el siguiente enlace: https://raw.githubusercontent.com/platzi/mongodb-2019/main/PlatziMongo.json
+Import collection.png
+Damos click al botón “Continue” y ¡listo! Con eso ya deberías tener las solicitudes de prueba importadas en tu Postman, en las siguientes clases te mostraré cómo usarlas 😉.
+Recuerda que puedes profundizar más en el funcionamiento de Postman en el Curso de Postman.
+
+Creando un ambiente virtual para nuestro proyecto
+Ahora que ya tenemos Postman instalado y nuestro código base descargado es necesario que instalemos las dependencias para el mismo. Para ello, como en todo buen proyecto con Python, crearemos un ambiente virtual. Es importante recalcar que para esto debes tener instalada una versión de Python superior a la versión 3.3. Puedes aprender a cómo instalar Python según tu sistema operativo en nuestro Curso Básico de Python 💪.
+
+Para crear nuestro ambiente virtual debemos ejecutar este comando desde dentro de la carpeta de nuestro proyecto:
+
+python3 -m venv venv
+Con el ambiente creado, ahora debemos activarlo, para ello podemos hacerlo con el siguiente comando si estás en Windows:
+
+.\venv\Scripts\activate
+O con el siguiente comando, en caso de que estes en Linux o macOS:
+
+source venv/bin/activate
+Te puedes asegurar de que tu entorno virtual está activo viendo que a la izquierda de tu terminal aparece su nombre entre paréntesis. Para desactivar el ambiente virtual puedes lograrlo con el siguiente comando:
+
+deactivate
+Otra forma de crear ambientes virtuales con Python es mediante el uso de Anaconda. Puedes profundizar más en el tema de ambientes virtuales en el Curso de Python Intermedio, pero para este proyecto, con lo que te he explicado aquí basta 😉.
+
+Instalación de las dependencias del proyecto
+Ya que tenemos el ambiente virtual creado en nuestro proyecto debes activarlo para poder instalar las dependencias. Para instalarlas es tan simple como correr el siguiente comando asegurándote de que tu entorno virtual está activo:
+
+pip3 install -r requirements.txt
+Activación del ambiente virtual
+En caso de que tengas algún error solo ejecuta el comando de nuevo, pip se encargará de solucionarlo en la primera incidencia.
+
+Variables de entorno necesarias para ejecutar el proyecto
+Por último, para que el proyecto se ejecute sin errores es necesario exportar las variables de entorno que se muestran a continuación, simplemente ejecuta cada una en tu terminal:
+
+export FLASK_APP=platzi-api
+export FLASK_ENV=development
+export PLATZI_DB_URI="MONGO-URI"
+Debes reemplazar MONGO-URI por la URI de MongoDB atlas en el siguiente formato:
+
+mongodb+srv://<TU-USUARIO>:<TU-CONTRASEÑA>@<TU-ATLAS-URI>
+Ejemplo:
+
+mongodb+srv://m220student:m220password@mflix-5zlol.mongodb.net
+Cuando hayas ejecutado todas las variables de entorno ejecuta el siguiente comando para que la aplicación empiece a correr:
+
+flask run
+De esta manera se ejecutará un servidor de desarrollo apuntando a http://127.0.0.1:5000 el cual contendrá nuestra API lista para empezar a trabajar 😉.
+
+De esta forma terminamos la configuración de nuestro entorno de desarrollo. No olvides abrir el proyecto en tu editor de código preferido, en mi caso usaré Pycharm, pero tú puedes usar Visual Studio Code si así lo deseas.
