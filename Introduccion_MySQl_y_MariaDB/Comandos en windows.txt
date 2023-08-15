@@ -1,0 +1,56 @@
+#	Entrar a mariaDb
+mysql -u root -p
+
+#	Para entrar directamente a la base de datos:
+
+mysql -u root -p metro_cl; //metro_cl es el nombre de la base de datos
+
+# 	Crear database
+CREATE DATABASE metro_cl;
+
+#	Mostrar base de datos
+SHOW DATABASES; 
+#	Crear Usuario
+CREATE USER 'DarkCain'@'localhost' IDENTIFIED BY 'contraseña('123')';
+#	Borrar Usuario
+DROP USER 'DarkCain'@'localhost'
+#	Dar Privilegios //https://mariadb.com/kb/en/grant/
+GRANT ALL PRIVILEGES ON * . * TO 'DarkCain'@'localhost';
+#	Ingresar como el usuario creado
+mysql -u DarkCain -p
+#	Mostrar Tablas
+SHOW TABLES;
+#	Pushear el archivo al sql //PS C:\Users\diego\Documents\Programacion\Back-En\Introduccion_MySQl_y_MariaDB>  Get-Content 2_create_tables.sql | mysql -u DarkCain -p
+#	Pushear el archivo al sql
+mysql < 2-create-tables.sql;
+#	ALTER TABLE //Alterar tabla
+
+USE `database_name`;
+
+ALTER TABLE `table_name`
+MODIFY `database_name` MODIFICATIONS,
+ADD PRIMARY KEY(column_name)
+
+#	Mostrar datos de una tabla
+DESCRIBE table_name
+
+#	Crear una tabla
+CREATE TABLE `lines` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(10) NOT NULL,
+  `color` VARCHAR(15) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY(`id`)
+)
+
+#	Traer Todo lo que hay en una tabla
+SELECT * FROM metro_cl.lines
+SELECT * FROM `lines`;
+
+#	Nested queries
+Select column_name FROM `table_name` WHERE search_student = (
+	SELECT column_name 
+	FROM table_name 
+	WHERE search = "searchedItem"
+)

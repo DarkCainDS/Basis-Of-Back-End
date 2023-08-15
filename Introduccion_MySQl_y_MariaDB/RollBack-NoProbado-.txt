@@ -1,0 +1,15 @@
+-- Iniciamos una transacción
+START TRANSACTION;
+
+-- Oops!
+DELETE FROM `stations`;
+
+-- Empezamos a sudar
+SELECT * FROM `stations`;
+
+-- No nos preocupemos, le hacemos ROLLBACK y volvemos al estado inicial antes de comenzar la transacción.
+ROLLBACK;
+
+-- 🎉
+SELECT * FROM `stations`;
+Si estamos seguros que nuestros cambios están correctos, en lugar de hacer ROLLBACK hacemos COMMIT.
