@@ -1,0 +1,273 @@
+Fáciles:
+Pregunta Fácil 1: ¿Qué hace la función SUM en SQL?
+
+Respuesta: La función SUM se utiliza para encontrar la suma total de los valores en una columna.
+
+Pregunta Fácil 2: ¿Cómo contarías todas las filas en una tabla con la función de agregación COUNT?
+
+Respuesta: Utilizando la sintaxis SELECT COUNT(*) FROM nombre_tabla;.
+
+Pregunta Fácil 3: ¿Cuál es el propósito de la función AVG?
+
+Respuesta: La función AVG se utiliza para encontrar el promedio de los valores en una columna.
+
+Pregunta Fácil 4: ¿Para qué se utiliza la función MIN en SQL?
+
+Respuesta: La función MIN se utiliza para encontrar el valor mínimo en una columna.
+
+Pregunta Fácil 5: ¿Cómo puedes contar el número de valores distintos en una columna?
+
+Respuesta: Utilizando la función de agregación COUNT DISTINCT.
+
+Pregunta Fácil 6: ¿Qué hace la función MAX?
+
+Respuesta: La función MAX se utiliza para encontrar el valor máximo en una columna.
+
+Pregunta Fácil 7: ¿Cuál es el efecto de aplicar una función de agregación a una columna que contiene valores NULL?
+
+Respuesta: En general, las funciones de agregación ignoran los valores NULL.
+
+Pregunta Fácil 8: ¿Cómo se obtiene la suma de una columna específica en una tabla?
+
+Respuesta: Utilizando la sintaxis SELECT SUM(nombre_columna) FROM nombre_tabla;.
+
+Pregunta Fácil 9: ¿Cuál es el resultado de aplicar la función COUNT a una columna que contiene valores duplicados?
+
+Respuesta: COUNT contará cada fila, incluyendo duplicados.
+
+Pregunta Fácil 10: ¿En qué parte de una consulta SQL se coloca la cláusula GROUP BY cuando se utilizan funciones de agregación?
+
+Respuesta: La cláusula GROUP BY se coloca después de la cláusula WHERE y antes de la cláusula ORDER BY.
+
+Medianas:
+Pregunta Mediana 1: Explica la diferencia entre las funciones de agregación COUNT y COUNT DISTINCT.
+
+Respuesta: COUNT cuenta todas las filas, mientras que COUNT DISTINCT cuenta solo los valores únicos en una columna.
+
+Pregunta Mediana 2: ¿Cómo puedes encontrar el promedio de una columna condicionalmente utilizando la función AVG?
+
+Respuesta: Aplicando la cláusula WHERE para establecer la condición en la columna antes de aplicar AVG.
+
+Pregunta Mediana 3: ¿Cuál es la importancia de la cláusula HAVING en una consulta SQL que utiliza GROUP BY?
+
+Respuesta: HAVING se utiliza para filtrar los resultados de las funciones de agregación cuando se utiliza GROUP BY.
+
+Pregunta Mediana 4: ¿Puedes proporcionar un ejemplo de cómo utilizar la función GROUP_CONCAT en una consulta SQL?
+
+Respuesta: SELECT columna, GROUP_CONCAT(otra_columna) FROM nombre_tabla GROUP BY columna;.
+
+Pregunta Mediana 5: ¿Cómo encontrarías el valor máximo en una columna específica y su correspondiente fila utilizando la función MAX?
+
+Respuesta: Puedes utilizar la cláusula ORDER BY con MAX y LIMIT 1 para obtener la fila correspondiente al valor máximo.
+
+Pregunta Mediana 6: Explica la diferencia entre la cláusula WHERE y la cláusula HAVING en el contexto de funciones de agregación.
+
+Respuesta: WHERE se utiliza antes de la agregación para filtrar filas, mientras que HAVING se utiliza después de la agregación para filtrar resultados.
+
+Pregunta Mediana 7: ¿Cómo puedes contar el número de filas que cumplen con una condición específica utilizando COUNT y WHERE?
+
+Respuesta: SELECT COUNT(*) FROM nombre_tabla WHERE condicion;.
+
+Pregunta Mediana 8: ¿En qué tipo de situaciones sería útil utilizar la función de agregación STDDEV?
+
+Respuesta: STDDEV es útil para calcular la desviación estándar de un conjunto de valores en una columna.
+
+Pregunta Mediana 9: ¿Cómo se utiliza la función de agregación SUM para encontrar la suma total de una columna agrupada por otra columna?
+
+Respuesta: SELECT columna_grupo, SUM(otra_columna) FROM nombre_tabla GROUP BY columna_grupo;.
+
+Pregunta Mediana 10: Explica el propósito de la cláusula ORDER BY en una consulta SQL que utiliza funciones de agregación.
+
+Respuesta: ORDER BY se utiliza para ordenar los resultados de una consulta basándose en los valores de las funciones de agregación o las columnas seleccionadas.
+
+Difíciles:
+Pregunta Difícil 1: ¿Cómo se pueden manejar eficientemente los valores NULL al utilizar funciones de agregación?
+
+Respuesta: Utilizando funciones específicas como COALESCE o IFNULL para manejar los valores NULL antes de aplicar funciones de agregación.
+
+Pregunta Difícil 2: ¿Cuál es la diferencia entre la función COUNT y la función COUNT(*) en términos de rendimiento?
+
+Respuesta: En muchos sistemas, COUNT(*) puede ser más eficiente, ya que no tiene que evaluar si las columnas son NULL.
+
+Pregunta Difícil 3: ¿Cómo puedes calcular la mediana de una columna en SQL sin usar funciones de ventana?
+
+Respuesta: Utilizando una combinación de funciones de agregación y subconsultas.
+
+Pregunta Difícil 4: Explica cómo la cláusula HAVING puede afectar el rendimiento de una consulta con GROUP BY.
+
+Respuesta: HAVING puede aumentar el costo de la consulta, ya que se aplica después de la agregación y puede requerir más recursos.
+
+Pregunta Difícil 5: ¿Cuándo utilizarías la función de agregación ROLLUP en lugar de la cláusula GROUP BY estándar?
+
+Respuesta: ROLLUP se utiliza para obtener subtotales y totales generales en una sola consulta, lo cual puede ser útil en informes agregados complejos.
+
+Pregunta Difícil 6: ¿Cómo se puede optimizar una consulta que utiliza varias funciones de agregación en grandes conjuntos de datos?
+
+Respuesta: Utilizando índices en columnas relevantes y asegurándose de que las condiciones WHERE sean eficientes.
+
+Pregunta Difícil 7: Explica el concepto de "ventana" en el contexto de funciones
+
+Fáciles:
+Pregunta Fácil 1: ¿Qué hace la función SUM en SQL?
+
+Respuesta: La función SUM se utiliza para encontrar la suma total de los valores en una columna.
+
+Pregunta Fácil 2: ¿Cómo contarías todas las filas en una tabla con la función de agregación COUNT?
+
+Respuesta: Utilizando la sintaxis SELECT COUNT(*) FROM nombre_tabla;.
+
+Pregunta Fácil 3: ¿Cuál es el propósito de la función AVG?
+
+Respuesta: La función AVG se utiliza para encontrar el promedio de los valores en una columna.
+
+Pregunta Fácil 4: ¿Para qué se utiliza la función MIN en SQL?
+
+Respuesta: La función MIN se utiliza para encontrar el valor mínimo en una columna.
+
+Pregunta Fácil 5: ¿Cómo puedes contar el número de valores distintos en una columna?
+
+Respuesta: Utilizando la función de agregación COUNT DISTINCT.
+
+Pregunta Fácil 6: ¿Qué hace la función MAX?
+
+Respuesta: La función MAX se utiliza para encontrar el valor máximo en una columna.
+
+Pregunta Fácil 7: ¿Cuál es el efecto de aplicar una función de agregación a una columna que contiene valores NULL?
+
+Respuesta: En general, las funciones de agregación ignoran los valores NULL.
+
+Pregunta Fácil 8: ¿Cómo se obtiene la suma de una columna específica en una tabla?
+
+Respuesta: Utilizando la sintaxis SELECT SUM(nombre_columna) FROM nombre_tabla;.
+
+Pregunta Fácil 9: ¿Cuál es el resultado de aplicar la función COUNT a una columna que contiene valores duplicados?
+
+Respuesta: COUNT contará cada fila, incluyendo duplicados.
+
+Pregunta Fácil 10: ¿En qué parte de una consulta SQL se coloca la cláusula GROUP BY cuando se utilizan funciones de agregación?
+
+Respuesta: La cláusula GROUP BY se coloca después de la cláusula WHERE y antes de la cláusula ORDER BY.
+
+Medianas:
+Pregunta Mediana 1: Explica la diferencia entre las funciones de agregación COUNT y COUNT DISTINCT.
+
+Respuesta: COUNT cuenta todas las filas, mientras que COUNT DISTINCT cuenta solo los valores únicos en una columna.
+
+Pregunta Mediana 2: ¿Cómo puedes encontrar el promedio de una columna condicionalmente utilizando la función AVG?
+
+Respuesta: Aplicando la cláusula WHERE para establecer la condición en la columna antes de aplicar AVG.
+
+Pregunta Mediana 3: ¿Cuál es la importancia de la cláusula HAVING en una consulta SQL que utiliza GROUP BY?
+
+Respuesta: HAVING se utiliza para filtrar los resultados de las funciones de agregación cuando se utiliza GROUP BY.
+
+Pregunta Mediana 4: ¿Puedes proporcionar un ejemplo de cómo utilizar la función GROUP_CONCAT en una consulta SQL?
+
+Respuesta: SELECT columna, GROUP_CONCAT(otra_columna) FROM nombre_tabla GROUP BY columna;.
+
+Pregunta Mediana 5: ¿Cómo encontrarías el valor máximo en una columna específica y su correspondiente fila utilizando la función MAX?
+
+Respuesta: Puedes utilizar la cláusula ORDER BY con MAX y LIMIT 1 para obtener la fila correspondiente al valor máximo.
+
+Pregunta Mediana 6: Explica la diferencia entre la cláusula WHERE y la cláusula HAVING en el contexto de funciones de agregación.
+
+Respuesta: WHERE se utiliza antes de la agregación para filtrar filas, mientras que HAVING se utiliza después de la agregación para filtrar resultados.
+
+Pregunta Mediana 7: ¿Cómo puedes contar el número de filas que cumplen con una condición específica utilizando COUNT y WHERE?
+
+Respuesta: SELECT COUNT(*) FROM nombre_tabla WHERE condicion;.
+
+Pregunta Mediana 8: ¿En qué tipo de situaciones sería útil utilizar la función de agregación STDDEV?
+
+Respuesta: STDDEV es útil para calcular la desviación estándar de un conjunto de valores en una columna.
+
+Pregunta Mediana 9: ¿Cómo se utiliza la función de agregación SUM para encontrar la suma total de una columna agrupada por otra columna?
+
+Respuesta: SELECT columna_grupo, SUM(otra_columna) FROM nombre_tabla GROUP BY columna_grupo;.
+
+Pregunta Mediana 10: Explica el propósito de la cláusula ORDER BY en una consulta SQL que utiliza funciones de agregación.
+
+Respuesta: ORDER BY se utiliza para ordenar los resultados de una consulta basándose en los valores de las funciones de agregación o las columnas seleccionadas.
+
+Difíciles:
+Pregunta Difícil 1: ¿Cómo se pueden manejar eficientemente los valores NULL al utilizar funciones de agregación?
+
+Respuesta: Utilizando funciones específicas como COALESCE o IFNULL para manejar los valores NULL antes de aplicar funciones de agregación.
+
+Pregunta Difícil 2: ¿Cuál es la diferencia entre la función COUNT y la función COUNT(*) en términos de rendimiento?
+
+Respuesta: En muchos sistemas, COUNT(*) puede ser más eficiente, ya que no tiene que evaluar si las columnas son NULL.
+
+Pregunta Difícil 3: ¿Cómo puedes calcular la mediana de una columna en SQL sin usar funciones de ventana?
+
+Respuesta: Utilizando una combinación de funciones de agregación y subconsultas.
+
+Pregunta Difícil 4: Explica cómo la cláusula HAVING puede afectar el rendimiento de una consulta con GROUP BY.
+
+Respuesta: HAVING puede aumentar el costo de la consulta, ya que se aplica después de la agregación y puede requerir más recursos.
+
+Pregunta Difícil 5: ¿Cuándo utilizarías la función de agregación ROLLUP en lugar de la cláusula GROUP BY estándar?
+
+Respuesta: ROLLUP se utiliza para obtener subtotales y totales generales en una sola consulta, lo cual puede ser útil en informes agregados complejos.
+
+Pregunta Difícil 6: ¿Cómo se puede optimizar una consulta que utiliza varias funciones de agregación en grandes conjuntos de datos?
+
+Respuesta: Utilizando índices en columnas relevantes y asegurándose de que las condiciones WHERE sean eficientes.
+
+Pregunta Difícil 7: Explica el concepto de "ventana" en el contexto de funciones
+
+
+Pregunta Mediana 4: ¿Puedes proporcionar un ejemplo de cómo utilizar la función GROUP_CONCAT en una consulta SQL?
+
+Respuesta: SELECT columna, GROUP_CONCAT(otra_columna) FROM nombre_tabla GROUP BY columna;.
+
+Pregunta Mediana 5: ¿Cómo encontrarías el valor máximo en una columna específica y su correspondiente fila utilizando la función MAX?
+
+Respuesta: Puedes utilizar la cláusula ORDER BY con MAX y LIMIT 1 para obtener la fila correspondiente al valor máximo.
+
+Pregunta Mediana 6: Explica la diferencia entre la cláusula WHERE y la cláusula HAVING en el contexto de funciones de agregación.
+
+Respuesta: WHERE se utiliza antes de la agregación para filtrar filas, mientras que HAVING se utiliza después de la agregación para filtrar resultados.
+
+Pregunta Mediana 7: ¿Cómo puedes contar el número de filas que cumplen con una condición específica utilizando COUNT y WHERE?
+
+Respuesta: SELECT COUNT(*) FROM nombre_tabla WHERE condicion;.
+
+Pregunta Mediana 8: ¿En qué tipo de situaciones sería útil utilizar la función de agregación STDDEV?
+
+Respuesta: STDDEV es útil para calcular la desviación estándar de un conjunto de valores en una columna.
+
+Pregunta Mediana 9: ¿Cómo se utiliza la función de agregación SUM para encontrar la suma total de una columna agrupada por otra columna?
+
+Respuesta: SELECT columna_grupo, SUM(otra_columna) FROM nombre_tabla GROUP BY columna_grupo;.
+
+Pregunta Mediana 10: Explica el propósito de la cláusula ORDER BY en una consulta SQL que utiliza funciones de agregación.
+
+Respuesta: ORDER BY se utiliza para ordenar los resultados de una consulta basándose en los valores de las funciones de agregación o las columnas seleccionadas.
+
+Difíciles:
+Pregunta Difícil 1: ¿Cómo se pueden manejar eficientemente los valores NULL al utilizar funciones de agregación?
+
+Respuesta: Utilizando funciones específicas como COALESCE o IFNULL para manejar los valores NULL antes de aplicar funciones de agregación.
+
+Pregunta Difícil 2: ¿Cuál es la diferencia entre la función COUNT y la función COUNT(*) en términos de rendimiento?
+
+Respuesta: En muchos sistemas, COUNT(*) puede ser más eficiente, ya que no tiene que evaluar si las columnas son NULL.
+
+Pregunta Difícil 3: ¿Cómo puedes calcular la mediana de una columna en SQL sin usar funciones de ventana?
+
+Respuesta: Utilizando una combinación de funciones de agregación y subconsultas.
+
+Pregunta Difícil 4: Explica cómo la cláusula HAVING puede afectar el rendimiento de una consulta con GROUP BY.
+
+Respuesta: HAVING puede aumentar el costo de la consulta, ya que se aplica después de la agregación y puede requerir más recursos.
+
+Pregunta Difícil 5: ¿Cuándo utilizarías la función de agregación ROLLUP en lugar de la cláusula GROUP BY estándar?
+
+Respuesta: ROLLUP se utiliza para obtener subtotales y totales generales en una sola consulta, lo cual puede ser útil en informes agregados complejos.
+
+Pregunta Difícil 6: ¿Cómo se puede optimizar una consulta que utiliza varias funciones de agregación en grandes conjuntos de datos?
+
+Respuesta: Utilizando índices en columnas relevantes y asegurándose de que las condiciones WHERE sean eficientes.
+
+Pregunta Difícil 7: Explica el concepto de "ventana" en el contexto de funciones
